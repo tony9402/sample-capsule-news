@@ -1,0 +1,17 @@
+// 받아온 값을 구조체 형식으로 만들어 놓은 컨셉입니다.
+// 이 컨셉 안에 자바스크립트에서 받아온 img, img_url, title 의 정보가 들어있습니다.
+
+structure (news_info) {
+	property (img) {
+		type (img)
+		min (Optional) max (One)
+	}
+	property (img_url) {
+		type (img_url)
+		min (Optional) max (One)
+	}
+	property (title) {
+		type (title)
+		min (Optional) max (One)
+	}
+}

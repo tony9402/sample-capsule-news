@@ -1,0 +1,207 @@
+// 여기는 레이아웃입니다. 어떤 레이아웃을 사용할 것인지 먼저 시뮬레이터로 돌려보고
+// 결정하거나 bixbydevelopers.com에서 확인하셔도 좋습니다
+// 다른 예제엔 다른 레이아웃도 예시로 제작해 놓았습니다.
+// 저는 이번 예제에서 layout-macro-def를 사용했는데
+// layout-summary나 layout-details로 구현하셔도 됩니다.
+// 위의 방법으로 하면 result-view 는 따로 안만드셔도 됩니다.
+
+layout-macro-def(news_info_macro) {
+	params {
+		param (news_info) {
+			type (news_info)
+		}
+	}
+	
+	content {
+		section {
+			content {
+				single-line {
+					text {
+						value ("여기서 부터 셀카드 사용 예시")
+						style (Title_XS)
+					}
+				}
+				//####################### 셀 카드 사용 예시 #######################
+				for-each (news_info) {
+					as () {
+						index-var (i)
+						if (news_info[i].img == 'true') {
+							cell-card {
+								slot1 {
+									image {
+										url ("#{value(news_info[i].img_url)}")
+										shape (Square)
+									}
+								}
+								slot2 {
+									content {
+										order (PrimarySecondary)
+										primary ("#{value(news_info[i].title)}")
+									}
+								}
+							}
+						}
+					}
+				}divider
+				partitioned {
+					content {
+						single-line {
+							text  {
+								value ("파티션으로 이렇게 구분도")
+								style (Title_M)
+								color (Amber)
+							}
+						}
+						single-line {
+							text  {
+								value ("색도 바꿀 수 있습니다.")
+								style (Title_L)
+								color (Blue)
+							}
+						}
+						single-line {
+							text  {
+								value ("정렬은 hbox로 해야해요!")
+								style (Detail_L_Soft)
+								color (Green)
+							}
+						}
+						single-line {
+							text  {
+								value ("hbox는 다른예시에서 보여드릴게요")
+								style (Title_XS)
+								color (Red)
+							}
+						}
+					}
+				}divider
+				
+				//####################### 이미지 카드 사용 예시 #######################
+				single-line {
+					text {
+						value ("여기서 부터 이미지 카드 사용 예시")
+						style (Title_XS)
+					}
+				}
+				for-each (news_info) {
+					as () {
+						index-var (i)
+						if (news_info[i].img == 'true') {
+							image-card {
+								aspect-ratio (4:3)
+								title-area {
+									halign (Start)
+									slot1 {
+										text {
+											value ("#{value(news_info[i].title)}")
+											style (Title_M)
+										}
+									}
+									slot2 {
+										single-line {
+											text {
+												value ("이미지 카드 사용 예시") // From $160.00 • 4.5 stars
+												style (Detail_L)
+											}
+										}
+									}
+								}
+								image-url ("#{value(news_info[i].img_url)}")
+							}
+						}
+					}
+				}
+				//####################### 썸네일 카드 사용 예시 #######################
+				single-line {
+					text {
+						value ("여기서 부터 섬네일 카드 사용 예시")
+						style (Title_XS)
+					}
+				}
+				for-each (news_info) {
+					as () {
+						index-var (i)
+						if (news_info[i].img == 'true') {
+							thumbnail-card {
+								title-area {
+									halign (Start)
+									slot1 {
+										text {
+											style (Title_S)
+											value ("#{value(news_info[i].title)}")
+										}
+									}
+									slot2 {
+										single-line {
+											text {
+												value ("썸네일 카드 예시 입니다")
+												style (Detail_L)
+											}
+										}
+									}
+									slot3 {
+										single-line {
+											text {
+												value ("썸네일 카드 예시")
+												style (Detail_M_Soft)
+											}
+										}
+									}
+								}
+								image-url {
+									template ("#{value(news_info[i].img_url)}")
+								}
+								image-position (End)
+							}
+						}
+					}
+				}
+				//####################### 인풋셀 사용 예시 #######################
+				single-line {
+					text {
+						value ("여기서 부터 인풋셀 사용 예시")
+						style (Title_XS)
+					}
+				}
+				input-cell {
+					label {
+						template ("Bixby Hackathon")
+					}
+					value {
+						template ("11월 23일 SAT 10:00 ~ 18:00")
+					}
+				}
+				input-cell {
+					label {
+						template ("위치")
+					}
+					value {
+						template ("숭실대학교 정보과학관 301호")
+					}
+				}
+				split-input-cell {
+					left {
+						input-cell {
+							label {
+								template ("예시")
+							}
+							value {
+								template ("input-cell")
+							}
+						}
+					}
+					right {
+						input-cell {
+							label {
+								template ("왼쪽, 오른쪽 나누기")
+							}
+							value {
+								template ("가능")
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

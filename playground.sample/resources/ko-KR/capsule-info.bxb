@@ -1,0 +1,11 @@
+// 여기는 전반적인 캡슐의 기본 사항을 적어놓은 곳입니다.
+
+capsule-info {
+  display-name (Hackathon Sample) // 캡슐이 표시되는 이름
+  developer-name (Hackathon Sample) // 만든사람 이름
+  icon-asset (/images/icon.png) // 캡슐 아이콘
+  description ("Hackathon Sample") //설명
+  website-url (https://example.com/) // 캡슐 제작에 있어 설명 페이지 및 웹사이트
+  terms-url (https://example.com/terms-of-use/) // 약관 및 등등?
+}
+

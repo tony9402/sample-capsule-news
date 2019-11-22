@@ -1,0 +1,5 @@
+train (t-0w58qw9icf3hu2tinfzk3rfam) {
+  utterance ("[g:search_news] 오늘 IT (뉴스)[v:news] 보여줘")
+  plan (Y2BmkC7ISaxML8ovzUvRK07MLchJ1ctLLS+Oz8xLy2eQxZQsTk0sSs6IB6lhEMOul4GJgRGIGYAkIwMIQPkA)
+  last-modified (1574362088702)
+}

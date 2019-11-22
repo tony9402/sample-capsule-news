@@ -1,0 +1,12 @@
+// 이 파트는 action입니다.
+
+action (search_news) {
+  description ("캡슐의 전반적인 뼈대로 input과 output을 설정 할 수 있는 이 곳은 action입니다. 캡슐의 기본적인 동작을 전담하죠")
+  collect {
+    input (news) {
+      type (news)
+      min (Optional) max (One)
+    }
+  }
+  output (news_info)
+}

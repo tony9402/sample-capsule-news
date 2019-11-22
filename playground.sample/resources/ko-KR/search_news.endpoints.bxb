@@ -1,0 +1,13 @@
+// 여기는 end-point입니다. 자바스크립트와 액션을 이어줌으로써 자바에서 받은 정보를 액션으로 넘겨주죠. 액션에서는 output설정으로
+// 컨셉에 다시 넘겨줍니다.
+
+endpoints {
+  action-endpoints {
+    // Uncomment the lines below and enter the information for actions, inputs, and the appropriate local or remote endpoints
+    action-endpoint (search_news) {
+      accepted-inputs (news)
+      local-endpoint ("search_news.js")
+    }
+    
+  }
+}

@@ -1,0 +1,5 @@
+// input값입니다. 발화에 대한 정보를 가지고 있습니다.
+
+text (news) {
+  description (__DESCRIPTION__)
+}
